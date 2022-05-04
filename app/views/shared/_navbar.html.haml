@@ -1,3 +1,11 @@
-.nav
+.menu-box
+  %h3 Logs
+  %ul{style: "list-style-type:none"}
   - @log_files.each do |log_file|
-    = link_to log_file, log_file_path(log_file), class: 'nav-item'
+    %li
+      - if log_file.split(".").last == "log"
+        = link_to log_file, log_file_path(log_file), class: 'nav-item'
+        = link_to "☰", tail_log_path(log_file), title: "Tail <<#{log_file}>>", target: :_blank, class: 'nav-item'
+      - else
+        = link_to log_file, download_log_path(log_file), class: 'nav-item'
+      = link_to "↓", download_log_path(log_file), title: "#{I18n.t('logs.download')+' <<'+log_file+'>>'}", class: 'nav-item'

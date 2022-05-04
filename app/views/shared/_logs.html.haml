@@ -1,4 +1,4 @@
-%div
+.console-box
   - @rendered_logs.each_line do |log_line|
-    %div
-      = log_line
+    = log_line.html_safe
+    %br/
