@@ -5,7 +5,7 @@ module Logs
     module Pagination
       extend ActiveSupport::Concern
 
-      PER_PAGE = 50
+      PER_PAGE = 1000
       PAGE = 1
 
       included do
