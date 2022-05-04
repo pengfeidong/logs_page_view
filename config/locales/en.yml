@@ -6,3 +6,5 @@ en:
     last: 'last »'
     first: '« first'
     all_pages: 'All pages: '
+    download: 'Download'
+    auto_refresh: 'Auto refresh every 10s'

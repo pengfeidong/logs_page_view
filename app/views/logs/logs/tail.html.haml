@@ -1,0 +1,20 @@
+%body{:onload => "JavaScript:timedRefresh(10000);"}
+  .container-fluid
+    %h2
+      %div.text-nowrap
+        tail -500 #{@file_name} &nbsp;
+        &#91; &nbsp;
+        %input{:checked => "checked", :name => "autoRefreshCheckboxes", :type => "checkbox"}>
+        = I18n.t('logs.auto_refresh')
+        &nbsp;&#93;
+    %pre.console-box
+      = @lines.join("\n").html_safe
+    :javascript
+      function refreshPage() {
+        if ($("input[name=autoRefreshCheckboxes]").is(":checked")) {
+          location.reload(true);
+        }
+      }
+      function timedRefresh(timeoutPeriod) {
+        var interval = setInterval(refreshPage, timeoutPeriod);
+      }
