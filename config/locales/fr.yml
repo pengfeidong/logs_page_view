@@ -1,0 +1,10 @@
+fr:
+  logs:
+    log_file: 'Fichier journal: '
+    lines: 'Lignes: '
+    pages: 'Pages: '
+    last: 'dernier »'
+    first: '« premier'
+    all_pages: 'Toutes les pages: '
+    download: 'Télécharger'
+    auto_refresh: 'Actualisation automatique toutes les 10s'
