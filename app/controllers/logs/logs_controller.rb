@@ -22,6 +22,7 @@ module Logs
       @file_name = params[:f]
       log = File.join(Logs::Viewer.log_path(@file_name))
       @lines = `tail -500 #{ log }`.split(/\n/)
+      @lines.reverse!
       respond_to do |wants|
         wants.html
         wants.json{ render(:json => @lines) }
