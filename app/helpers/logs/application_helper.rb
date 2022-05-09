@@ -16,8 +16,8 @@ module Logs
       tail_path + "?f=" + log_name
     end
 
-    def lines(file)
-      file.each_line.count.to_s
+    def lines(file_path_name)
+      `cat #{ file_path_name } | wc -l`.to_s
     end
   end
 end
