@@ -2,12 +2,12 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'logs/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'logs'
+  s.name        = 'logs_page_view'
   s.version     = Logs::VERSION
-  s.authors     = ['Kirill Shevchenko']
-  s.email       = ['hello@kirillshevch.com']
-  s.homepage    = 'https://github.com/kirillshevch/logs'
-  s.summary     = 'Mountable Rails Engine for viewing paginated logs from a browser'
+  s.authors     = ['Pengfei Dong']
+  s.email       = ['mail@peng-fei.name']
+  s.homepage    = 'https://github.com/pengfeidong/logs_page_view'
+  s.summary     = 'Mountable Rails Engine for displaying, tail and download logs from a browser'
   s.description = s.summary
   s.license     = 'MIT'
 
