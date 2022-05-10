@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    logs (0.3.0)
+    logs_page_view (1.0.1)
       haml-rails
       rails (> 5)
 
@@ -86,9 +86,9 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     erubis (2.7.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
-    haml (5.2.1)
+    globalid (1.0.0)
+      activesupport (>= 5.0)
+    haml (5.2.2)
       temple (>= 0.8.0)
       tilt
     haml-rails (2.0.1)
@@ -112,11 +112,13 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
-    nio4r (2.5.5)
+    nio4r (2.5.8)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -193,15 +195,15 @@ GEM
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
     ruby-progressbar (1.11.0)
-    ruby_parser (3.15.1)
-      sexp_processor (~> 4.9)
-    sexp_processor (4.15.2)
-    sprockets (4.0.2)
+    ruby_parser (3.19.1)
+      sexp_processor (~> 4.16)
+    sexp_processor (4.16.1)
+    sprockets (4.0.3)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.2.2)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     temple (0.8.2)
@@ -210,7 +212,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -222,7 +224,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  logs!
+  logs_page_view!
   pry-byebug
   rake
   rspec-rails
