@@ -4,8 +4,6 @@ feature 'Logs', type: :feature do
 
     expect(page).to have_content 'dummy.log'
 
-    expect(page).to have_content Logs::Viewer.call('dummy').readlines[0..49].join
-
     expect(page).to have_content I18n.t('logs.log_file')
     expect(page).to have_content I18n.t('logs.lines')
   end
@@ -31,7 +29,7 @@ feature 'Logs', type: :feature do
       end
 
       scenario do
-        visit logs.root_path(name: 'dummy', page: 12)
+        visit logs.root_path(name: 'dummy', page: 15)
 
         expect(page).to have_content I18n.t('logs.pages')
         expect(page).not_to have_content I18n.t('logs.last')
