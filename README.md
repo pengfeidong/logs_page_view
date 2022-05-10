@@ -1,7 +1,7 @@
 # Logs_page_view
 [![Gem Version](https://badge.fury.io/rb/logs_page_view.svg)](https://badge.fury.io/rb/logs_page_view)
-[![CircleCI](https://circleci.com/gh/kirillshevch/logs.svg?style=shield&circle-token=5e904bb791d31a5f8bd06b0cf29746f69aeb6caa)](https://circleci.com/gh/kirillshevch/logs)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c121e93550b2e6e4d2ae/maintainability)](https://codeclimate.com/github/kirillshevch/logs/maintainability)
+[![CircleCI](https://circleci.com/gh/pengfeidong/logs_page_view/tree/master.svg?style=shield)](https://circleci.com/gh/pengfeidong/logs_page_view/tree/master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a6aa3cde91bab8c79e44/maintainability)](https://codeclimate.com/github/pengfeidong/logs_page_view/maintainability)
 
 Mountable Rails Engine for displaying, tail and download logs from a browser
 
