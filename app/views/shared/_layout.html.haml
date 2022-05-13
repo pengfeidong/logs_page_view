@@ -1,6 +1,10 @@
-= render 'shared/header'
-.row.nav-pagination
-  = render 'shared/navbar'
-  = render 'shared/nav_pagination'
-= render 'shared/logs'
-= render 'shared/pagination'
+%body
+  .container-fluid
+    .row
+      .col-md-3
+        = render 'shared/navbar'
+      .col-md-9
+        = render 'shared/header'
+        = render 'shared/nav_pagination'
+        = render 'shared/logs'
+        = render 'shared/pagination'

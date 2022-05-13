@@ -1,15 +1,19 @@
-.nav.nav--inline
-  - if @page >= 10
-    .nav-item
-      = link_to I18n.t('logs.first'), log_file_path(log_file)
+%nav
+  %ul.pagination
+    - if @page >= 10
+      %li.page-item
+        = link_to I18n.t('logs.first'), log_file_path(log_file)
 
-  - pages_range.each do |page|
-    .nav-item
+    - pages_range.each do |page|
       - if page != @page
-        = link_to page, log_file_path(log_file) + "?page=#{page}"
+        %li.page-item
+          = link_to page, log_file_path(log_file) + "?page=#{page}"
       - else
-        = page
+        %li.page-item.active
+          %a.page-link{:href => "#"}
+            = page
+            %span.sr-only (current)
 
-  - if last_range != (pages_range[0]..pages_range.last) && @pages > 10
-    .nav-item
-      = link_to I18n.t('logs.last'), log_file_path(log_file) + "?page=#{@pages}"
+    - if last_range != (pages_range[0]..pages_range.last) && @pages > 10
+      %li.page-item
+        = link_to I18n.t('logs.last'), log_file_path(log_file) + "?page=#{@pages}"

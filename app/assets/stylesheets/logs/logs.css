@@ -1,13 +1,25 @@
-body {
-  padding: 10px 50px 50px 50px;
-}
-
 .nav--inline {
   display: inline-flex;
 }
 
 .all-pages {
   margin-top: 17px;
+}
+
+.menu-box {
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-right: -30px;
+}
+.console-box {
+  padding: 20px;
+  font-family: Monospace;
+  background-color: #212121;
+  color: #ffffff;
+  height: 100vh;
+  overflow: auto;
+  font-size: 12px;
 }
 
 @media (max-width: 1024px) {

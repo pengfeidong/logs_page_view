@@ -11,7 +11,7 @@ module Logs
 
         def load_logs
           file_name = params[:name] || Rails.env
-          @logs = Logs::Viewer.call(file_name).read
+          @logs = File.join(Logs::Viewer.log_path(file_name + ".log"))
         end
 
         def load_logs_list

@@ -5,7 +5,7 @@ module Logs
     module Pagination
       extend ActiveSupport::Concern
 
-      PER_PAGE = 50
+      PER_PAGE = 1000
       PAGE = 1
 
       included do
@@ -15,16 +15,16 @@ module Logs
           @per_page = (params[:per_page] || PER_PAGE).to_i
           @page = (params[:page] || PAGE).to_i
           file_name = params[:name] || Rails.env
+          file_path_name = Logs::Viewer.log_path(file_name + ".log")
 
-          range = (@page - 1) * @per_page..@per_page * @page - 1
+          range = ((@page - 1) * @per_page + 1).to_s + "," + (@per_page * @page).to_s + "p"
+          @rendered_logs = `sed -n #{range} #{ file_path_name }`
 
-          @rendered_logs = Logs::Viewer.call(file_name).readlines[range].join
-
-          @pages = calculate_pages.to_i
+          @pages = calculate_pages(file_path_name).to_i
         end
 
-        def calculate_pages
-          float_count = @logs.each_line.count.to_f / @per_page.to_f
+        def calculate_pages(file_path_name)
+          float_count = lines(file_path_name).to_f / @per_page.to_f
           float_count != float_count.round ? float_count + 1 : float_count
         end
       end
